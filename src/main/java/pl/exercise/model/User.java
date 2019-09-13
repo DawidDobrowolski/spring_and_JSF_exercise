@@ -1,4 +1,4 @@
-package pl.model;
+package pl.exercise.model;
 
 
 import org.springframework.beans.factory.annotation.Autowired;

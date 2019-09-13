@@ -1,4 +1,4 @@
-package pl.appconfig;
+package pl.exercise.appconfig;
 
 
 import com.sun.faces.config.FacesInitializer;
