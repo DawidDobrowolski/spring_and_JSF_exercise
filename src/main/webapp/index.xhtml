@@ -1,0 +1,75 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:c="http://java.sun.com/jsp/jstl/core">
+<h:head>
+    <title>User Form</title>
+</h:head>
+<h:body>
+    <h:dataTable value="#{userList.getUsers()}" var="u"
+                 styleClass="order-table"
+                 headerClass="order-table-header"
+                 rowClasses="order-table-odd-row,order-table-even-row"
+    >
+        <h:column>
+            <f:facet name="header">
+                ID
+            </f:facet>
+            #{u.id}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                UserName
+            </f:facet>
+            #{u.username}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                FirstName
+            </f:facet>
+            #{u.firstName}
+        </h:column>
+
+        <h:column>
+            <f:facet name="header">
+                lastName
+            </f:facet>
+            #{u.lastName}
+        </h:column>
+    </h:dataTable>
+
+    <h:form>
+        <h3>Add/Edit User</h3>
+        <h:panelGrid columns="3">
+            <h:outputLabel>User Id:</h:outputLabel>
+            <h:inputText value="#{user.id}"></h:inputText>
+            <br/>
+            <br/>
+
+            <h:outputLabel>Username:</h:outputLabel>
+            <h:inputText value="#{user.username}"></h:inputText>
+            <br/>
+            <br/>
+
+            <h:outputLabel>Password:</h:outputLabel>
+            <h:inputSecret value="#{user.password}"></h:inputSecret>
+            <br/>
+            <br/>
+
+            <h:outputLabel>First Name:</h:outputLabel>
+            <h:inputText value="#{user.firstName}"></h:inputText>
+            <br/>
+            <br/>
+
+            <h:outputLabel>Last Name:</h:outputLabel>
+            <h:inputText value="#{user.lastName}"></h:inputText>
+            <br/>
+            <br/>
+            <h:commandButton type="submit" action="#{user.addUser}" value="Submit"></h:commandButton>
+        </h:panelGrid>
+    </h:form>
+</h:body>
+</html>
